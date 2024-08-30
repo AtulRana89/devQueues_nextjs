@@ -10,7 +10,10 @@ const Navbar = () => {
     <header className="bg-white shadow-md fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="text-3xl font-bold text-indigo-500">
+        <Link
+          href="/"
+          className="text-3xl font-bold text-indigo-500 cursor-none"
+        >
           <Image
             src="/logo.png"
             alt="Logo"
@@ -25,7 +28,7 @@ const Navbar = () => {
         <nav className="hidden md:flex space-x-8 relative">
           <Link
             href="/"
-            className="text-black text-[13px] font-semibold hover:text-[#15b8a6]"
+            className="text-black text-[13px] font-semibold hover:text-[#15b8a6] cursor-none"
           >
             HOME
           </Link>

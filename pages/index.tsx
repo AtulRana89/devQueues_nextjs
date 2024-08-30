@@ -28,7 +28,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between ${inter.className}`}
+        className={`flex min-h-screen flex-col items-center justify-between ${inter.className} `}
       >
         <BannerSlider />
         <section id="about-us" className="py-12">
@@ -77,12 +77,12 @@ export default function Home() {
         {/* ======= Services Section =======  */}
         <section id="services" className="py-12">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Service Box  */}
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
-                <div className="flex items-center justify-center bg-[#15b8a6] text-white w-16 h-16 rounded-full mx-auto mb-6">
+            <div className="flex flex-wrap justify-center gap-4 px-4">
+              {/* Service Box */}
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 flex-1 min-w-[250px]">
+                <div className="flex items-center justify-center bg-[#15b8a6] text-white w-16 h-16 rounded-full mx-auto mb-4">
                   <svg
-                    className="w-10 h-10 animate-spin" // Add the animation class here
+                    className="w-10 h-10 animate-spin"
                     fill="#f5f5f5"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -104,10 +104,10 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
-                <div className="flex items-center justify-center bg-[#15b8a6] text-white w-16 h-16 rounded-full mx-auto mb-6">
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 flex-1 min-w-[250px]">
+                <div className="flex items-center justify-center bg-[#15b8a6] text-white w-16 h-16 rounded-full mx-auto mb-4">
                   <svg
-                    className="w-10 h-10 animate-bounce" // Tailwind class for bouncing animation
+                    className="w-10 h-10 animate-bounce"
                     fill="#f5f5f5"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -127,8 +127,9 @@ export default function Home() {
                   streamline business solutions.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
-                <div className="flex items-center justify-center bg-[#15b8a6]  text-white w-16 h-16 rounded-full mx-auto mb-6">
+
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 flex-1 min-w-[250px]">
+                <div className="flex items-center justify-center bg-[#15b8a6] text-white w-16 h-16 rounded-full mx-auto mb-4">
                   <svg
                     className="w-10 h-10"
                     xmlns="http://www.w3.org/2000/svg"
@@ -151,15 +152,16 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h4 className="font-bold text-center mb-4">UI/UX design</h4>
+                <h4 className="font-bold text-center mb-4">UI/UX Design</h4>
                 <p className="text-gray-600 text-sm text-center">
                   Crafting interfaces that engage users visually and
                   emotionally. Establishing a unique brand identity through
                   visual design.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
-                <div className="flex items-center justify-center bg-[#15b8a6] text-white w-16 h-16 rounded-full mx-auto mb-6">
+
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 flex-1 min-w-[250px]">
+                <div className="flex items-center justify-center bg-[#15b8a6] text-white w-16 h-16 rounded-full mx-auto mb-4">
                   <svg
                     className="w-10 h-10 animate-spin-slow"
                     xmlns="http://www.w3.org/2000/svg"
@@ -180,16 +182,17 @@ export default function Home() {
                     <path d="M16.24 7.76L19.07 4.93" />
                   </svg>
                 </div>
-                <h4 className="font-bold text-center mb-4">QA/testing</h4>
+                <h4 className="font-bold text-center mb-4">QA/Testing</h4>
                 <p className="text-gray-600 text-sm text-center">
                   Our quality assurance team ensures quality testing of the
                   product across the entire lifecycle of your app.
                 </p>
               </div>
-              {/* Repeat similar blocks for other services  */}
+              {/* Repeat similar blocks for other services */}
             </div>
           </div>
         </section>
+
         {/* <section id="portfolio" className="py-12">
           <div className="container mx-auto px-6">
             <div className="flex justify-center mb-12">
@@ -490,43 +493,314 @@ export default function Home() {
             </section>
           </div>
         </section> */}
-        <section id="portfolio" className="portfolio py-12">
+        <section id="portfolio" className="portfolio w-full py-12">
           <div className="container mx-auto">
             <div className="flex justify-center mb-8" data-aos="fade-up">
-              <ul id="portfolio-flters" className="flex space-x-4">
+              <ul
+                id="portfolio-flters"
+                className="flex space-x-2 items justify-center items-center"
+              >
                 <li
                   onClick={() => handleFilterClick("all")}
+                  // style={{ marginLeft: "0px !important" }}
                   className={`cursor-pointer ${
-                    activeFilter === "all" ? "text-[#15b8a6]" : "text-black"
-                  } px-[20px] pt-[8px] pb-[10px]`}
+                    activeFilter === "all"
+                      ? "text-[#ffffff] bg-[#15b8a6] text-[14px] rounded-[4px]"
+                      : "text-black"
+                  } hover:text-[#ffffff] hover:bg-[#15b8a6] hover:text-[14px] hover:rounded-[4px] px-[15px] pt-[5px] pb-[5px] text-[14px]`}
                 >
-                  All
+                  ALL
                 </li>
                 <li
                   onClick={() => handleFilterClick("app")}
+                  // style={{ marginLeft: "0px !important" }}
                   className={`cursor-pointer ${
-                    activeFilter === "app" ? "text-[#15b8a6]" : "text-black"
-                  }`}
+                    activeFilter === "app"
+                      ? "text-[#ffffff] bg-[#15b8a6] text-[14px] rounded-[4px]"
+                      : "text-black"
+                  } hover:text-[#ffffff] hover:bg-[#15b8a6] hover:text-[14px] hover:rounded-[4px] px-[15px] pt-[5px] pb-[5px] text-[14px]`}
                 >
-                  App
-                </li>
-                <li
-                  onClick={() => handleFilterClick("card")}
-                  className={`cursor-pointer ${
-                    activeFilter === "card" ? "text-[#15b8a6]" : "text-black"
-                  }`}
-                >
-                  Card
+                  APP
                 </li>
                 <li
                   onClick={() => handleFilterClick("web")}
+                  // style={{ marginLeft: "0px !important" }}
                   className={`cursor-pointer ${
-                    activeFilter === "web" ? "text-[#15b8a6]" : "text-black"
-                  }`}
+                    activeFilter === "web"
+                      ? "text-[#ffffff] bg-[#15b8a6] text-[14px] rounded-[4px]"
+                      : "text-black"
+                  } hover:text-[#ffffff] hover:bg-[#15b8a6] hover:text-[14px] hover:rounded-[4px] px-[15px] pt-[5px] pb-[5px] text-[14px]`}
                 >
-                  Web
+                  WEB
+                </li>
+
+                <li
+                  onClick={() => handleFilterClick("card")}
+                  // style={{ marginLeft: "0px !important" }}
+                  className={`cursor-pointer ${
+                    activeFilter === "card"
+                      ? "text-[#ffffff] bg-[#15b8a6] text-[14px] rounded-[4px]"
+                      : "text-black"
+                  } hover:text-[#ffffff] hover:bg-[#15b8a6] hover:text-[14px] hover:rounded-[4px] px-[20px] pt-[5px] pb-[5px] text-[14px]`}
+                >
+                  UI
                 </li>
               </ul>
+            </div>
+            <div>
+              {activeFilter === "all" && (
+                <div className="flex flex-wrap md:flex-nowrap justify-between gap-8">
+                  <div className="flex flex-col rounded-lg md:mb-0 md:w-1/2 gap-4">
+                    <div className="h-[200px] md:h-[250px] lg:h-[300px] xl:h-[420px] relative">
+                      <Image
+                        src="/slide/slide-1.jpg"
+                        alt="Card Image "
+                        className="rounded-lg mb-4"
+                        fill
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className="h-[200px] md:h-[250px] lg:h-[300px] xl:h-[620px] relative">
+                      <Image
+                        src="/slide/slide-3.jpg"
+                        alt="Card Image 5"
+                        className="rounded-lg mb-4"
+                        fill
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col rounded-lg md:mb-0 md:w-1/2 gap-4">
+                    <div className="relative">
+                      <div className="h-[200px] md:h-[250px] lg:h-[300px] xl:h-[280px]">
+                        <Image
+                          src="/slide/slide-1.jpg"
+                          alt="Card Image "
+                          className="rounded-lg mb-4"
+                          fill
+                          objectFit="cover"
+                        />
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <div className="h-[200px] md:h-[250px] lg:h-[300px] xl:h-[620px]">
+                        <Image
+                          src="/slide/slide-3.jpg"
+                          alt="Card Image 5"
+                          className="rounded-lg mb-4"
+                          fill
+                          objectFit="cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col rounded-lg md:mb-0 md:w-1/2 gap-4">
+                    <div className="h-[200px] md:h-[250px] lg:h-[300px] xl:h-[220px] relative">
+                      <Image
+                        src="/slide/slide-1.jpg"
+                        alt="Card Image "
+                        className="rounded-lg mb-4"
+                        fill
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className="h-[200px] md:h-[250px] lg:h-[300px] xl:h-[320px] relative">
+                      <Image
+                        src="/slide/slide-3.jpg"
+                        alt="Card Image 5"
+                        className="rounded-lg mb-4"
+                        fill
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className="h-[200px] md:h-[250px] lg:h-[300px] xl:h-[250px] relative">
+                      <Image
+                        src="/slide/slide-3.jpg"
+                        alt="Card Image 5"
+                        className="rounded-lg mb-4"
+                        fill
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+                // <>
+                // <div className="-mx-2 flex flex-wrap sm:-mx-4 lg:-mx-2 xl:-mx-4">
+                //   <div className="w-full px-2 sm:w-1/2 sm:px-4 lg:px-2 xl:px-4">
+                //     <div className="mb-4 sm:mb-8 sm:h-[400px] md:h-[540px] lg:h-[400px] xl:h-[500px]">
+                //       <Image
+                //         src="/slide/logo.png"
+                //         alt="Banner 1"
+                //         fill
+                //         className="object-cover"
+                //         // className="h-full w-full object-cover object-center"
+                //       />
+                //     </div>
+                //   </div>
+
+                //   <div className="w-full px-2 sm:w-1/2 sm:px-4 lg:px-2 xl:px-4">
+                //     <div className="mb-4 sm:mb-8 sm:h-[220px] md:h-[346px] lg:mb-4 lg:h-[225px] xl:mb-8 xl:h-[310px]">
+                //       <Image
+                //         src="/slide/logo.png"
+                //         alt="Banner 1"
+                //         fill
+                //         className="object-cover"
+                //         // className="h-full w-full object-cover object-center"
+                //       />
+                //     </div>
+
+                //     <div className="relative z-10 mb-4 flex items-center justify-center overflow-hidden bg-primary px-6 py-12 sm:mb-8 sm:h-[160px] sm:p-5 lg:mb-4 xl:mb-8">
+                //       <div>
+                //         <span className="block text-5xl font-extrabold text-white">
+                //           09
+                //         </span>
+                //         <span className="block text-base font-semibold text-white">
+                //           We have
+                //         </span>
+                //         <span className="block text-base font-medium text-white text-opacity-70">
+                //           Years of experience
+                //         </span>
+                //       </div>
+                //       <div>
+                //         <span className="absolute left-0 top-0 -z-10">
+                //           <svg
+                //             width="106"
+                //             height="144"
+                //             viewBox="0 0 106 144"
+                //             fill="none"
+                //             xmlns="http://www.w3.org/2000/svg"
+                //           >
+                //             <rect
+                //               opacity="0.1"
+                //               x="-67"
+                //               y="47.127"
+                //               width="113.378"
+                //               height="131.304"
+                //               transform="rotate(-42.8643 -67 47.127)"
+                //               fill="url(#paint0_linear_1416_214)"
+                //             ></rect>
+                //             <defs>
+                //               <linearGradient
+                //                 id="paint0_linear_1416_214"
+                //                 x1="-10.3111"
+                //                 y1="47.127"
+                //                 x2="-10.3111"
+                //                 y2="178.431"
+                //                 gradientUnits="userSpaceOnUse"
+                //               >
+                //                 <stop stop-color="white"></stop>
+                //                 <stop
+                //                   offset="1"
+                //                   stop-color="white"
+                //                   stop-opacity="0"
+                //                 ></stop>
+                //               </linearGradient>
+                //             </defs>
+                //           </svg>
+                //         </span>
+                //         <span className="absolute right-0 top-0 -z-10">
+                //           <svg
+                //             width="130"
+                //             height="97"
+                //             viewBox="0 0 130 97"
+                //             fill="none"
+                //             xmlns="http://www.w3.org/2000/svg"
+                //           >
+                //             <rect
+                //               opacity="0.1"
+                //               x="0.86792"
+                //               y="-6.67725"
+                //               width="155.563"
+                //               height="140.614"
+                //               transform="rotate(-42.8643 0.86792 -6.67725)"
+                //               fill="url(#paint0_linear_1416_215)"
+                //             ></rect>
+                //             <defs>
+                //               <linearGradient
+                //                 id="paint0_linear_1416_215"
+                //                 x1="78.6495"
+                //                 y1="-6.67725"
+                //                 x2="78.6495"
+                //                 y2="133.937"
+                //                 gradientUnits="userSpaceOnUse"
+                //               >
+                //                 <stop stop-color="white"></stop>
+                //                 <stop
+                //                   offset="1"
+                //                   stop-color="white"
+                //                   stop-opacity="0"
+                //                 ></stop>
+                //               </linearGradient>
+                //             </defs>
+                //           </svg>
+                //         </span>
+                //         <span className="absolute bottom-0 right-0 -z-10">
+                //           <svg
+                //             width="175"
+                //             height="104"
+                //             viewBox="0 0 175 104"
+                //             fill="none"
+                //             xmlns="http://www.w3.org/2000/svg"
+                //           >
+                //             <rect
+                //               opacity="0.1"
+                //               x="175.011"
+                //               y="108.611"
+                //               width="101.246"
+                //               height="148.179"
+                //               transform="rotate(137.136 175.011 108.611)"
+                //               fill="url(#paint0_linear_1416_216)"
+                //             ></rect>
+                //             <defs>
+                //               <linearGradient
+                //                 id="paint0_linear_1416_216"
+                //                 x1="225.634"
+                //                 y1="108.611"
+                //                 x2="225.634"
+                //                 y2="256.79"
+                //                 gradientUnits="userSpaceOnUse"
+                //               >
+                //                 <stop stop-color="white"></stop>
+                //                 <stop
+                //                   offset="1"
+                //                   stop-color="white"
+                //                   stop-opacity="0"
+                //                 ></stop>
+                //               </linearGradient>
+                //             </defs>
+                //           </svg>
+                //         </span>
+                //       </div>
+                //     </div>
+                //   </div>
+                // </div>
+                // </>
+              )}
+              {activeFilter === "app" && (
+                <div>
+                  <Image
+                    src="/slide/logo.png"
+                    alt="Banner 1"
+                    fill
+                    // className="object-cover w-full h-full"
+                  />
+                </div>
+              )}
+              {activeFilter === "web" && (
+                <div>
+                  <Image
+                    src="/slide/logo.png"
+                    alt="Banner 1"
+                    fill
+                    // className="object-cover w-full h-full"
+                  />
+                </div>
+              )}
+              {activeFilter === "card" && (
+                <div>
+                  <Image src="/slide/logo.png" alt="Banner 1" fill />
+                </div>
+              )}
             </div>
           </div>
         </section>

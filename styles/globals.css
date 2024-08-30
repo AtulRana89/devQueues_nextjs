@@ -36,6 +36,11 @@
 }
 
 body {
+
+  cursor: none !important;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -43,11 +48,91 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+     /* Allow scrolling */
+      /* Prevent scrollbar due to cursor movement */
 }
 
-
+a,ul,li {
+  cursor: none !important;
+  /* Hide the cursor */
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+}
+
+
+
+
+/* Default custom cursor */
+/* .custom-cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #0D6B1B;
+  background-color: rgba(21, 184, 166, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.custom-cursor.zoom-in {
+  transform: scale(1.5) translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-cursor.zoom-out {
+  transform: scale(1) translate(-50%, -50%);
+} */
+
+/* Default custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #0D6B1B;
+  background-color: rgba(21, 184, 166, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  /* Prevent the cursor from blocking clicks */
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+/* Cursor zoom-in effect */
+.custom-cursor.zoom-in {
+  transform: scale(1.5) translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Cursor zoom-out effect */
+.custom-cursor.zoom-out {
+  transform: scale(0.8) translate(-50%, -50%);
+}
+
+/* Expanding circle effect */
+.custom-cursor.click-effect {
+  animation: expandCircle 0.6s forwards;
+}
+
+@keyframes expandCircle {
+  from {
+    transform: scale(1) translate(-50%, -50%);
+    border-color: #0D6B1B;
+    width: 30px;
+    height: 30px;
+  }
+
+  to {
+    transform: scale(2) translate(-50%, -50%);
+    border-color: rgba(21, 184, 166, 0);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(21, 184, 166, 0.2);
   }
 }
